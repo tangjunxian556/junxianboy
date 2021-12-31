@@ -1,0 +1,29 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /gateway
+
+spring:
+  application:
+    name: junxian-gateway
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: public
+    gateway:
+      routes:
+        - id: junxian-admin
+          uri: lb://junxian-admin
+          predicates:
+            - Path=/admin/**
+          filters:
+            - StripPrefix= 1
+        - id: junxian-auth
+          uri: lb://junxian-auth
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix= 1

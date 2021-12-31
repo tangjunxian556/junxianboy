@@ -1,0 +1,36 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /admin
+
+spring:
+  application:
+    name: junxian-admin
+  datasource:
+    dynamic:
+      primary: mysql1
+      datasource:
+        mysql1:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://127.0.0.1:3306/renren_cloud?useUnicode=true&characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Shanghai&nullCatalogMeansCurrent=true
+          username: root
+          password: 123456
+      druid:
+        initial-size: 1
+        max-active: 20
+        min-idle: 1
+        max-wait: 60000
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: public
+
+mybatis:
+  # 配置数据库mapper层映射路径
+  mapper-locations: classpath:mapper/*.xml
+  # 配置数据库表实体映射路径
+  type-aliases-package: com.junxian.entity
+  # 是否开启数据映射驼峰命名转换
+  configuration:
+    map-underscore-to-camel-case: true
