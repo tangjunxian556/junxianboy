@@ -6,40 +6,31 @@
 
     <!-- 集成的父类 -->
     <parent>
-        <artifactId>junxian-admin</artifactId>
+        <artifactId>junxian-cloud</artifactId>
         <groupId>org.junxian</groupId>
         <version>1.0</version>
     </parent>
 
     <!-- 三坐标 -->
-    <version>1.0</version>
+    <artifactId>junxian-auth</artifactId>
     <groupId>com.junxian</groupId>
-    <artifactId>junxian-admin-server</artifactId>
+    <version>1.0</version>
 
     <!-- 工程名称描述 -->
-    <name>junxian-admin-server</name>
-    <description>业务中心</description>
-
-    <!-- 打包方式 -->
-    <packaging>jar</packaging>
+    <name>junxian-auth</name>
+    <description>登录中心</description>
 
     <!-- 加入依赖 -->
     <dependencies>
         <dependency>
             <groupId>org.junxian</groupId>
-            <artifactId>junxian-common-tools</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <!-- junxian-admin-client -->
-        <dependency>
-            <groupId>org.junxian</groupId>
             <artifactId>junxian-admin-client</artifactId>
             <version>1.0</version>
         </dependency>
-        <!-- mysql驱动 -->
+        <!-- spring-boot-starter-web -->
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <!-- nacos依赖 -->
         <dependency>
@@ -52,31 +43,22 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
             <version>2.2.3.RELEASE</version>
         </dependency>
-        <!-- mybatis-plus -->
+        <!-- token生成依赖 -->
         <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>2.2.0</version>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+            <version>3.4.0</version>
         </dependency>
+        <!-- lombok -->
         <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-annotation</artifactId>
-            <version>3.3.2</version>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
+        <!-- spring-cloud-starter-openfeign -->
         <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
-            <version>2.5.6</version>
-        </dependency>
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-core</artifactId>
-            <version>3.3.2</version>
-        </dependency>
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-extension</artifactId>
-            <version>3.3.2</version>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>2.2.5.RELEASE</version>
         </dependency>
     </dependencies>
 
@@ -88,5 +70,6 @@
             </plugin>
         </plugins>
     </build>
+
 
 </project>

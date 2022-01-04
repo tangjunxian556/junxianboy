@@ -20,10 +20,10 @@ spring:
           predicates:
             - Path=/admin/**
           filters:
-            - StripPrefix= 1
+            - StripPrefix= 0
         - id: junxian-auth
           uri: lb://junxian-auth
           predicates:
             - Path=/auth/**
           filters:
-            - StripPrefix= 1
+            - StripPrefix= 0
