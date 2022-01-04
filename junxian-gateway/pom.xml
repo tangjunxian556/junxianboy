@@ -26,6 +26,18 @@
     <!-- 加入依赖 -->
     <dependencies>
         <dependency>
+            <groupId>org.junxian</groupId>
+            <artifactId>junxian-common-tools</artifactId>
+            <version>1.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-web</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>
             <version>2.2.5.RELEASE</version>
